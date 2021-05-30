@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export async function getStaticProps(context) {
   const pokemons = await fetch('https://pokeapi.co/api/v2/pokedex/2/')
@@ -25,6 +26,19 @@ export default function Home(props) {
   return (
     <div>
       Pokédex - JrDev
+      <ul>
+        <li>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/sobre">
+            <a>Sobre o projeto</a>
+          </Link>
+        </li>
+      </ul>
+
       <ul>
         {pokemons.map((pokemon) => (
           <li key={pokemon.entry_number}>
