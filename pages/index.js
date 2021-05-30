@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export async function getStaticProps(context) {
   const pokemons = await fetch('https://pokeapi.co/api/v2/pokedex/2/')
